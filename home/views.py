@@ -4,3 +4,8 @@ from django.conf import settings
 def home(request):
     restaurant_name = getattr(settings,'RESTAURANT_NAME','Default Restaurant')
     return render('home.html',{'restaurant_name':restaurant_name})
+
+
+def about(request):
+    restaurant_name=Restaurant.objects.first().name
+    return render(request,'about.html',{'restaurant_name':restaurant_name})
