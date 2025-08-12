@@ -1,0 +1,22 @@
+body{
+    font-family: 'Segoe UI',Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(129deg,#f8f9f4,#e3f2f8);
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+h1{
+    color: #333;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    font-size: 28px;
+    text-align: center;
+}
