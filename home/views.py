@@ -17,3 +17,4 @@ def custom_404_view(request,exception=None):
     else:
         restaurant_name=getattr(settings,"RESTAURANT_NAME",'Our Restaurant')
     return render(request,"404.html",{"restaurant_name":restaurant_name})
+
