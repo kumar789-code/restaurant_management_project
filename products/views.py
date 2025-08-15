@@ -24,3 +24,12 @@ class ItemView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def menu_list(request):
+    menu_items = [
+        {"id":1,"name":"Pizza","price":89},
+        {"id":2,"name":"Burger","price":79},
+        {"id":3,"name":"Pasta","price":99}
+    ]
+    return JsonResponse(menu_items,safe=False)
