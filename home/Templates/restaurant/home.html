@@ -20,10 +20,16 @@
             border-radius:10px;
             box-shadow:0px 5px 15px rgba(0,0,0,0.1);
             }
+            p{
+            color: "blue"
+            background-color: "red"
+            }
         </style>
     </head>
     <body>
         <h1>Welcome To {{ restaurant_name }}</h1>
+        <p>Call us: {{ phone }}</p>
         <a href="{% url 'about' %}">About Us</a>
+
     </body>
 </html>
