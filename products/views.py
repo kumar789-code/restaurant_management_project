@@ -5,6 +5,7 @@ from rest_framework import status
 
 from .models import Item
 from .serializers import ItemSerializer
+from django.http import JsonResponse
 
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
