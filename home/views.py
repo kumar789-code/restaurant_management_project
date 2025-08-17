@@ -4,8 +4,14 @@ from .models import RestaurantInfo
 # Create your views here.
 def home(request):
     restaurant_name = getattr(settings,'RESTAURANT_NAME','Default Restaurant')
-    restaurant_info=RestaurantInfo.objects.first()
-    phone=restaurant_info.phone if restaurant_info else "N/A"
+    phone="Not available"
+    try:
+        restaurant_info=RestaurantInfo.objects.first()
+        if restaurant_info:
+            phone=restaurant_info.phone
+    except DatabaseError as e:
+        print("Database error:",e)
+        phone="Error fetching phone"
     return render('home.html',{'restaurant_name':restaurant_name,'phone':phone})
 
 
