@@ -1,68 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta charset="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ restaurant_name }}</title>
-        <style>
-            body{
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI',Arial,sans-serif;
-            background: linear-gradient(135deg,#f0f4f6,#d9e4ec);
-            height: 100vh;
-            display: flex;
-            color: #333;
-            justify-content: center;
-            align-align-items: center
-            }
-
-            .logo-container{
-            margin-top: 30px;
-            margin-bottom: 20px;
-            }
-            
-            .logo{
-            width: 180px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1)
-            }
-
-            header{
-            background-color: #ff7f50;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            }
-            h1{
-            color: #2c3e50;
-            background-color: white;
-            padding: 20px 40px;
-            border-radius:10px;
-            box-shadow:0px 5px 15px rgba(0,0,0,0.1);
-            }
-            p{
-            color: #666;
-            font-size: 18px;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>{{ restaurant_name }}</h1>
-        </header>
-        <div class="logo-container">
-            <img src="{% static 'image/logo.png'%}" alt="restaurant_logo" class="logo">
-        </div>
-        <p> Welcome to {{ restaurant_name }} ! we're happy to server you </p>
-        <p>Call us: {{ phone }}</p>
-        <a href="{% url 'about' %}">About Us</a>
-
-        <footer class="footer">
-            <p> &copy; {% now "Y" %} {{ restaurant_name}}. All rights reserved <p>
-        </footer>
-
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Home - {{ restaurant_name}}{% endblock %}
+{% block content %}
+<div class="logo-container">
+    <img src="{% static 'images/logo.png' %}" alt="restaurant_logo" class="logo">
+</div>
+<div class="content">
+    <h1> Welcome to {{ restaurant_name }}</h1>
+    <p class="phone">Contact us at {{ phone }}</p>
+</div>
+{% endblock %}
