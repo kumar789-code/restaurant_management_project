@@ -27,3 +27,7 @@ def custom_404_view(request,exception=None):
         restaurant_name=getattr(settings,"RESTAURANT_NAME",'Our Restaurant')
     return render(request,"404.html",{"restaurant_name":restaurant_name})
 
+def reservation(request):
+    restaurant_name=getattr(settings,"RESTAURANT_NAME","Default Restaurant")
+    phone=RestaurantInfo.objects.first().phone if RestaurantInfo.objects.exists() else "N/A"
+    return render(request,"reservation.html",{'restaurant_name':restaurant_name,'phone':phone})
