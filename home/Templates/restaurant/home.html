@@ -60,5 +60,9 @@
         <p>Call us: {{ phone }}</p>
         <a href="{% url 'about' %}">About Us</a>
 
+        <footer class="footer">
+            <p> &copy; {% now "Y" %} {{ restaurant_name}}. All rights reserved <p>
+        </footer>
+
     </body>
 </html>
