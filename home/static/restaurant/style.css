@@ -66,3 +66,40 @@ h1{
     width: 100%;
     font-size: 0.9em
 }
+
+form{
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+form label{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 2px solid #ff9800;
+}
+
+form button{
+    background-color: #ff9800;
+    color: #121212;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover{
+    background-color: #e68900;
+}
