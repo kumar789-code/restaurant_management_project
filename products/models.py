@@ -9,4 +9,8 @@ class Item(models.Model):
     def __str__(self):
         return str(self.item_name)
 
-class 
+class Feedback(models.Model):
+    name=models.CharField(max_length=100,blank=True,null=True)
+    comments=models.TextField()
+    created_at=models.DateTimeField(auto_now_add=True)
+    
