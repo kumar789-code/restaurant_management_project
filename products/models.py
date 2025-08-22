@@ -14,3 +14,5 @@ class Feedback(models.Model):
     comments=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return f"feedback from {self.name}"
