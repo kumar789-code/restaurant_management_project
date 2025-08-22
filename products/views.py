@@ -3,8 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Item
-from .serializers import ItemSerializer
+from .models import Item,Feedback
+from .serializers import ItemSerializer,FeedbackSerializer
 from django.http import JsonResponse
 
 '''
@@ -34,3 +34,17 @@ def menu_list(request):
         {"id":3,"name":"Pasta","price":99}
     ]
     return JsonResponse(menu_items,safe=False)
+
+@api_view(['POST'])
+def feedback_submit(request):
+    serializer=FeedbackSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message":"Submitted Successfully"})
+    return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def feedback_list(request):
+    feedbacks=Feedback.objects.all().order_by('-created_at')
+    serializer=FeedbackSerializer(feedbacks,many=True)
+    return Response(serializer.data)
